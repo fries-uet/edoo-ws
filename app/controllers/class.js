@@ -15,8 +15,8 @@ module.exports.getclass = {
         let tokenId = _.get(user_data, 'token_id', '');
 
         new Models.User({
-            id : _id
-        }).fetch({withRelated: 'classes'}).then(function (user){
+            id: _id
+        }).fetch({withRelated: 'classes'}).then(function (user) {
             user = user.toJSON();
             delete user.password;
             rep(ResponseJSON('', user));
@@ -40,8 +40,8 @@ module.exports.getTimetable = {
         let tokenId = _.get(user_data, 'token_id', '');
 
         new Models.User({
-            id : _id
-        }).fetch({withRelated: 'classes.lessions'}).then(function (user){
+            id: _id
+        }).fetch({withRelated: 'classes.lessions'}).then(function (user) {
             user = user.toJSON();
             delete user.password;
             rep(ResponseJSON('', user));
