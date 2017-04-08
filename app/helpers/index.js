@@ -8,5 +8,6 @@ module.exports = {
     config: require('./config'),
     commons: require('./common-values'),
     time_validate: require('./time-validator'),
-    utils: require('./utils')
+    utils: require('./utils'),
+    pkg: require('../../package.json')
 };

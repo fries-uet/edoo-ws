@@ -7,10 +7,10 @@ const knex = require('../../config/bookshelft').knex;
 const Models = global.Models;
 const commons = global.helpers.commons;
 const jwt = require('jsonwebtoken');
-const postService = require('./post-service');
-const emailService = require('./email-service');
-const fileService = require('./file-service');
-const studentInfoService = require('./student-info-service');
+const postService = require('./post');
+const emailService = require('./email');
+const fileService = require('./file');
+const studentInfoService = require('./student-info');
 
 let config = global.helpers.config;
 const SERVER_KEY = config('SERVER_KEY', '');

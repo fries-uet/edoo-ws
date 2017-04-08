@@ -8,7 +8,7 @@ require('../autoload');
 /**
  * Models.
  */
-global.Models = require('../models/Models');
+global.Models = require('./Models');
 
 let services = require('../app/services');
 const helpers = global.helpers;

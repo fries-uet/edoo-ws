@@ -19,6 +19,7 @@
     "bookshelf": "^0.10.0",
     "boom": "^3.2.2",
     "dotenv": "^2.0.0",
+    "glob": "^7.1.1",
     "google-auth-library": "^0.10.0",
     "googleapis": "^16.1.0",
     "hapi": "^14.0.0",

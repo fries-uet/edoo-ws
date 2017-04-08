@@ -2,6 +2,19 @@
 
 const Hapi = require('hapi');
 const _ = require('lodash');
+
+/**
+ * Environment variables.
+ */
+require('dotenv').config({
+    path: '.env'
+});
+
+/**
+ * Helper functions.
+ */
+global.helpers = require('./helpers');
+
 const helpers = global.helpers;
 const config = helpers.config;
 
@@ -32,6 +45,11 @@ server.ext('onPreResponse', function (request, reply) {
 _register_plugins();
 
 /**
+ * Models.
+ */
+global.Models = require('./models');
+
+/**
  * Start server.
  */
 server.start((err) => {
@@ -50,16 +68,14 @@ server.start((err) => {
  * Register plugins.
  */
 function _register_plugins() {
-    var plugins = require('./plugins');
-
-    if (!_.isArray(plugins)) {
-        return;
-    }
+    let plugins = require('./plugins');
 
     server.register(plugins, (err) => {
         if (err) {
             console.log('Fail to load plugins.');
             console.error(err);
+        } else {
+            console.log('Load plugins success');
         }
     });
 }
@@ -68,12 +84,12 @@ function _register_plugins() {
  * Server started.
  */
 function _register_route_plugin() {
-    let route = require('./plugins/routes');
-
-    server.register([route], (err) => {
+    server.register(require('./routes'), (err) => {
         if (err) {
             console.log('Fail to load plugins.');
             console.error(err);
+        } else {
+            console.log('Load Route plugins success');
         }
     });
 }

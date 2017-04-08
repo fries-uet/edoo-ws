@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports ={
-    user : require('./user-service'),
-    post : require('./post-service'),
-    email : require('./email-service'),
-    file : require('./file-service'),
-    authGoogle : require('./auth-google')
+    user : require('./user'),
+    post : require('./post'),
+    email : require('./email'),
+    file : require('./file'),
+    authGoogle : require('./oauth/auth-google')
 };

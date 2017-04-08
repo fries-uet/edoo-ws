@@ -1,6 +1,6 @@
 const config = global.helpers.config;
 
-var knex = require('knex')({
+let knex = require('knex')({
     client: 'mysql',
     connection: {
         host: config('DB_HOST', 'localhost'),

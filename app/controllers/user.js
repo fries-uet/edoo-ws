@@ -92,7 +92,7 @@ module.exports.registerFirebaseToken = {
         let type = _.get(post, 'type', '');
         let device_token = _.get(post, 'token', '');
 
-        if (type != 'android' && type != 'ios' && type != 'web') {
+        if (type !== 'android' && type !== 'ios' && type !== 'web') {
             return rep(Boom.badData('invalid type, the type is: android/ios/web'));
         }
 

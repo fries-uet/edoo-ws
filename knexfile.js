@@ -1,10 +1,5 @@
 'use strict';
 
-/**
- * Auto load.
- */
-require('./autoload');
-
 let config = global.helpers.config;
 
 module.exports = {
