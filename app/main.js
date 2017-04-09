@@ -56,8 +56,8 @@ server.start((err) => {
     }
 
     // after server started
-    _register_plugins();
-    _register_route_plugin();
+    // _register_plugins();
+    // _register_route_plugin();
 
     console.log('Server running at:', server.info.uri);
 });
