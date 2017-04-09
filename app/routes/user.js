@@ -5,16 +5,6 @@ module.exports.register = (server, options, next) => {
 
 
     server.route([
-        {//Any request OPTIONS
-            path: '/{text*}',
-            method: ['OPTIONS'],
-            config: {
-                handler: function(request, reply) {
-                    return reply().code(204);
-                }
-            }
-        },
-
         /**
          * User
          */

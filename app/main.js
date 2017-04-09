@@ -42,8 +42,6 @@ server.ext('onPreResponse', function (request, reply) {
     reply.continue();
 });
 
-_register_plugins();
-
 /**
  * Models.
  */
@@ -58,6 +56,7 @@ server.start((err) => {
     }
 
     // after server started
+    _register_plugins();
     _register_route_plugin();
 
     console.log('Server running at:', server.info.uri);
