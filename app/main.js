@@ -69,26 +69,32 @@ server.start((err) => {
 function _register_plugins() {
     let plugins = require('./plugins');
 
-    server.register(plugins, (err) => {
-        if (err) {
-            console.log('Fail to load plugins.');
-            console.error(err);
-        } else {
-            console.log('Load plugins success');
-        }
-    });
+    plugins.forEach(function (plugin) {
+        server.register(plugin, (err) => {
+            if (err) {
+                console.log('Fail to load plugins.');
+                console.error(err);
+            } else {
+                console.log('Load plugins success');
+            }
+        });
+    })
 }
 
 /**
  * Server started.
  */
 function _register_route_plugin() {
-    server.register(require('./routes'), (err) => {
-        if (err) {
-            console.log('Fail to load plugins.');
-            console.error(err);
-        } else {
-            console.log('Load Route plugins success');
-        }
+    let routes = require('./routes');
+
+    routes.forEach(function (route) {
+        server.register(route, (err) => {
+            if (err) {
+                console.log('Fail to load plugins.');
+                console.error(err);
+            } else {
+                console.log('Load Route plugins success');
+            }
+        });
     });
 }
