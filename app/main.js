@@ -98,5 +98,3 @@ function _register_route_plugin() {
         });
     });
 }
-
-//test
