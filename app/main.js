@@ -3,17 +3,7 @@
 const Hapi = require('hapi');
 const _ = require('lodash');
 
-/**
- * Environment variables.
- */
-require('dotenv').config({
-    path: '.env'
-});
-
-/**
- * Helper functions.
- */
-global.helpers = require('./helpers');
+require('./load-env');
 
 const helpers = global.helpers;
 const config = helpers.config;

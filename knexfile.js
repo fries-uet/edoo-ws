@@ -1,5 +1,6 @@
 'use strict';
 
+require('./app/load-env');
 let config = global.helpers.config;
 
 module.exports = {
