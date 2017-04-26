@@ -5,6 +5,7 @@
   "scripts": {
     "prestart": "npm i",
     "start": "node index.js",
+    "db": "knex migrate:latest",
     "ki": "npm i -g knex"
   },
   "author": "",
