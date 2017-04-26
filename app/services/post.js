@@ -523,9 +523,9 @@ module.exports.pushNotiToStudent = function (classId, data) {
                     let firebaseToken = firebaseTokens[j];
                     if (firebaseToken.type == 'android') {
                         pushFirebaseNoti(API_FIREBASE_KEY, firebaseToken.token, data);
-                        console.log(API_FIREBASE_KEY);
-                        console.log(firebaseToken.token);
-                        console.log(data);
+                        // console.log(API_FIREBASE_KEY);
+                        // console.log(firebaseToken.token);
+                        // console.log(data);
 
                     }
                 }
@@ -581,8 +581,11 @@ function pushFirebaseNoti(apiKey, deviceToken, data) {
     };
 
     request.post(param_post, function (err, response, body) {
-        console.log(err);
-        console.log(response);
+        if (err)
+        {
+            console.log(err);
+            console.log(param_post);
+        }
     });
 }
 
