@@ -12,6 +12,13 @@ module.exports.register = (server, options, next) => {
             path: '/posts/{class_id}',
             config: controller.post.getpost
         },
+
+        {
+            method: ['GET'],
+            path: '/classes/{class_id}/posts',
+            config: controller.post.getpost
+        },
+
         {
             method: ['GET'],
             path: '/posts/{class_id}/page/{page_number}',
@@ -32,56 +39,22 @@ module.exports.register = (server, options, next) => {
             path: '/post/{post_id?}',
             config: controller.post.postDetail
         },
-        {
-            method : ['POST'],
-            path: '/cmt',
-            config: controller.post.postCmt
-        },
-        {
-            method : ['POST'],
-            path: '/deletecmt',
-            config: controller.post.deleteCmt
-        },
+
         {
             method : ['POST'],
             path: '/deletepost',
             config: controller.post.deletePost
         },
+
         {
             method : ['POST'],
             path: '/seen',
             config: controller.post.postSeen
         },
-        {
-            method : ['POST'],
-            path: '/votepost',
-            config: controller.post.postVote
-        },
-        {
-            method : ['POST'],
-            path: '/votecmt',
-            config: controller.post.postVoteCmt
-        },
-        {
-            method : ['POST'],
-            path: '/devotecmt',
-            config: controller.post.postDeVoteCmt
-        },
-        {
-            method : ['POST'],
-            path: '/unvotecmt',
-            config: controller.post.postUnVoteCmt
-        },
-        {
-            method : ['GET'],
-            path : '/repcmt/{comment_id}',
-            config : controller.post.getRepComments
-        },
-        {
-            method : ['POST'],
-            path : '/repcmt',
-            config : controller.post.postRepCmt
-        },
+
+        /**
+         * solve
+         */
         {
             method : ['POST'],
             path: '/solve',

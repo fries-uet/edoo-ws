@@ -6,5 +6,7 @@ module.exports = [
     require('./manager'),
     require('./default'),
     require('./oauth'),
+    require('./comment'),
+    require('./vote'),
     require('./post')
 ];
