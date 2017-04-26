@@ -8,4 +8,4 @@ require('./app/main');
 /**
  * Schedule: delete token expired
  */
-require('./schedule-job/token-checker');
+// require('./schedule-job/token-checker');
