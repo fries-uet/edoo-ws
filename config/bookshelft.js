@@ -9,7 +9,7 @@ let knex = require('knex')({
         database: config('DB_NAME', 'edoo'),
         charset: config('DB_CHARSET', 'utf8')
     },
-    pool: {min: 2, max: 50}
+    pool: {min: 2, max: 30}
 });
 
 const bookshelf = require('bookshelf')(knex);
